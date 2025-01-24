@@ -1,11 +1,14 @@
 class Lane:
-    def __init__(self, lane_name) -> None:
-        self.name = lane_name
+    def __init__(self, lane_name: str) -> None:
+        self.name:str = lane_name
         self.vehicle_num: int = 0
         self.special_vehicles: list[str] = []  # List of special vehicles like ambulance etc
         self.is_active: bool = False
-        self.active_time = 0
-        self.empty_time = 0
+        self.active_time: int = 0
+        self.empty_time: int = 0
+
+    def __str__(self) -> str:
+        return self.name
 
 def get_new_active_lane(lanes: list[Lane], current_active: Lane) -> Lane:
     """
