@@ -4,6 +4,8 @@ class Lane:
         self.vehicle_num: int = 0
         self.special_vehicles: list[str] = []  # List of special vehicles like ambulance etc
         self.is_active: bool = False
+        self.active_time = 0
+        self.empty_time = 0
 
 def get_new_active_lane(lanes: list[Lane], current_active: Lane) -> Lane:
     """
@@ -14,4 +16,6 @@ def get_new_active_lane(lanes: list[Lane], current_active: Lane) -> Lane:
 
     You can get the number of vehicles in a lane using the vehicle_num attribute
     the special_vehicles attribute is a list of special vehicle names present in a lane
+    the active_time attribute tells for how long the lane has been active
+    the empty_time attribute tells for how long the lane has been empty
     """
