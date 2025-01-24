@@ -5,9 +5,13 @@ class Lane:
         self.special_vehicles: list[str] = []  # List of special vehicles like ambulance etc
         self.is_active: bool = False
 
-def update(lanes: list[Lane], current_active: Lane) -> Lane:
+def get_new_active_lane(lanes: list[Lane], current_active: Lane) -> Lane:
     """
+    TODO: Return the lane that should get activated from the "lanes" list
+
     The update function takes a list of lane objects(ie a list of instances of the Lane class)
-    TODO: Return the lane that should be active from the lanes list
-    You can get the number of vehicles of a lane using the vehicle_num attribute
+    and the currently active lane
+
+    You can get the number of vehicles in a lane using the vehicle_num attribute
+    the special_vehicles attribute is a list of special vehicle names present in a lane
     """
