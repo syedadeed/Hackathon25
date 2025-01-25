@@ -1,4 +1,4 @@
-def detect_vehicles_and_ambulance(image_path):
+def detect_vehicles(image_path):
     import torch
     from PIL import Image
     # Load the pre-trained YOLOv5 model
@@ -26,3 +26,11 @@ def detect_vehicles_and_ambulance(image_path):
             sp_count += 1
 
     return vehicle_count, sp_count
+
+def test(image_path):
+    v, s = detect_vehicles(image_path)
+    print(f"Number of vehicles: {v}")
+    print(f"Number of special vehicles: {s}")
+
+if __name__ == "__main__":
+    test("C:\\Users\\dell\\Downloads\\A.jpg")
