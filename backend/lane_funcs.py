@@ -1,4 +1,4 @@
-from lane_class import Lane
+from backend.lane_class import Lane
 from random import randint
 
 def initialize_lane(lanes: list[Lane]) -> None:
