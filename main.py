@@ -28,18 +28,21 @@ def update_lane_A(vehicle_num: int, special_vehicle_num: int, active_status: boo
     y_coords = 270
     for i in range(special_vehicle_num):
         x = Label(root, image=special_vehicle_image_A)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=690, y=y_coords)
         y_coords += 60
 
     for i in range(vehicle_num):
         x = Label(root, image=car_image_A)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=690, y=y_coords)
         y_coords += 60
 
     if not active_status:
         x = Label(root, image=lane_status_image)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=690, y=170)
     return labels
@@ -51,18 +54,21 @@ def update_lane_B(vehicle_num: int, special_vehicle_num: int, active_status: boo
     x_coords = 500
     for i in range(special_vehicle_num):
         x = Label(root, image=special_vehicle_image_B)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=x_coords, y=90)
         x_coords -= 60
 
     for i in range(vehicle_num):
         x = Label(root, image=car_image_B)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=x_coords, y=90)
         x_coords -= 60
 
     if not active_status:
         x = Label(root, image=lane_status_image)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=600, y=90)
     return labels
@@ -73,18 +79,21 @@ def update_lane_C(vehicle_num: int, special_vehicle_num: int, active_status: boo
     x_coords = 900
     for i in range(special_vehicle_num):
         x = Label(root, image=special_vehicle_image_C)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=x_coords, y=90)
         x_coords += 60
 
     for i in range(vehicle_num):
         x = Label(root, image=car_image_C)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=x_coords, y=90)
         x_coords += 60
 
     if not active_status:
         x = Label(root, image=lane_status_image)
+        x.configure(borderwidth=0)
         labels.append(x)
         x.place(x=800, y=90)
     return labels
