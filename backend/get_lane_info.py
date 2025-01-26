@@ -27,10 +27,34 @@ def detect_vehicles(image_path):
 
     return vehicle_count, sp_count
 
-def test(image_path):
-    v, s = detect_vehicles(image_path)
+def detect_people(image_path):
+    from ultralytics import YOLO
+    import cv2
+
+    # Load the YOLOv8 model
+    model = YOLO("yolov8n.pt")  # YOLOv8 Nano pre-trained model
+
+    # Read the image
+    image = cv2.imread(image_path)
+    if image is None:
+        raise ValueError("Image not found. Please check the path.")
+
+    # Perform inference
+    results = model(image)
+
+    # Count the number of people detected (class ID for "person" is 0 in COCO dataset)
+    people_count = sum(1 for result in results[0].boxes if result.cls == 0)
+
+    return people_count
+
+
+def test(image_path1, image_path2):
+    v, s = detect_vehicles(image_path1)
     print(f"Number of vehicles: {v}")
     print(f"Number of special vehicles: {s}")
+    people_count = detect_people(image_path2)
+    print(f"Number of people is : {people_count}")
 
 if __name__ == "__main__":
-    test("C:\\Users\\dell\\Downloads\\A.jpg")
+    # test("C:\\Users\\dell\\Downloads\\A.jpg")
+    pass
